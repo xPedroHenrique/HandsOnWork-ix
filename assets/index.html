@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Plataforma de Doações</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h2>🤝 Plataforma de Doações Comunitárias</h2>
+
+        <nav>
+            <a onclick="mostrarTela('home')">Campanhas</a>
+            <a onclick="mostrarTela('instituicoes')">Instituições</a>
+            <a onclick="mostrarTela('login')">Login</a>
+            <a onclick="mostrarTela('cadastro')">Cadastro</a>
+        </nav>
+
+        <span id="userLogado"></span>
+
+    </header>
+
+    <section id="home" class="tela">
+        <h1>Campanhas de Doação</h1>
+
+        <div class="grid">
+
+            <div class="card campanha">
+                <img src="https://images.unsplash.com/photo-1604881991720-f91add269bed" class="imgCampanha">
+
+                <h3>Campanha do Agasalho Tijucas</h3>
+                <p>Arrecadação de roupas de inverno para famílias carentes da cidade.</p>
+
+                <p><strong>Meta:</strong> R$ 5.000</p>
+
+                <div class="barra">
+                    <div id="barra1" class="progresso"></div>
+                </div>
+
+                <p>Arrecadado: R$ <span id="valor1">0</span></p>
+
+                <button onclick="doar(1)">Doar</button>
+            </div>
+
+            <div class="card campanha">
+                <img src="https://images.unsplash.com/photo-1593113630400-ea4288922497" class="imgCampanha">
+
+                <h3>Ajuda às Famílias Atingidas pelas Chuvas</h3>
+                <p>Campanha para arrecadar alimentos e produtos de higiene.</p>
+
+                <p><strong>Meta:</strong> R$ 8.000</p>
+
+                <div class="barra">
+                    <div id="barra2" class="progresso"></div>
+                </div>
+
+                <p>Arrecadado: R$ <span id="valor2">0</span></p>
+
+                <button onclick="doar(2)">Doar</button>
+            </div>
+
+            <div class="card campanha">
+                <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289" class="imgCampanha">
+
+                <h3>Apoio ao Lar dos Idosos de Tijucas</h3>
+                <p>Arrecadação para compra de alimentos e medicamentos.</p>
+
+                <p><strong>Meta:</strong> R$ 6.000</p>
+
+                <div class="barra">
+                    <div id="barra3" class="progresso"></div>
+                </div>
+
+                <p>Arrecadado: R$ <span id="valor3">0</span></p>
+
+                <button onclick="doar(3)">Doar</button>
+            </div>
+
+            <div class="card campanha">
+                <img src="https://images.unsplash.com/photo-1606326608690-4e0281b1e588" class="imgCampanha">
+
+                <h3>Material Escolar Solidário</h3>
+                <p>Doação de mochilas e materiais para crianças da rede pública.</p>
+
+                <p><strong>Meta:</strong> R$ 4.000</p>
+
+                <div class="barra">
+                    <div id="barra4" class="progresso"></div>
+                </div>
+
+                <p>Arrecadado: R$ <span id="valor4">0</span></p>
+
+                <button onclick="doar(4)">Doar</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="instituicoes" class="tela">
+        <h1>Instituições Parceiras</h1>
+
+        <div class="grid">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300" class="imgCampanha">
+                <h3>Lar dos Idosos de Tijucas</h3>
+                <p>Apoio e cuidado para idosos da comunidade.</p>
+                <p><strong>Telefone:</strong> (48) 99999-0000</p>
+                <button onclick="mostrarTela('home')">Ver Campanhas</button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6" class="imgCampanha">
+                <h3>Paróquia São Sebastião</h3>
+                <p>Campanhas solidárias e apoio comunitário.</p>
+                <p><strong>Telefone:</strong> (48) 99999-1111</p>
+                <button onclick="mostrarTela('home')">Ver Campanhas</button>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c" class="imgCampanha">
+                <h3>Projeto Comunidade Solidária</h3>
+                <p>Auxílio para famílias em vulnerabilidade.</p>
+                <p><strong>Telefone:</strong> (48) 99999-2222</p>
+                <button onclick="mostrarTela('home')">Ver Campanhas</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="login" class="tela login">
+        <div class="login-container">
+
+            <h1>Bem-vindo</h1>
+            <p class="sub">Acesse sua conta</p>
+
+            <input type="email" id="loginEmail" placeholder="Email">
+            <input type="password" id="loginSenha" placeholder="Senha">
+
+            <button onclick="login()" id="btnLogin">Entrar</button>
+
+            <p id="loginMsg" class="msg"></p>
+
+            <div class="extra">
+                Não tem conta? <span onclick="mostrarTela('cadastro')">Criar conta</span>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="cadastro" class="tela login">
+        <div class="login-container">
+
+            <h1>Criar Conta</h1>
+            <p class="sub">Preencha os dados abaixo</p>
+
+            <input type="email" id="cadEmail" placeholder="Email">
+            <input type="password" id="cadSenha" placeholder="Senha">
+
+            <button onclick="cadastrar()" id="btnCadastro">Cadastrar</button>
+
+            <p id="cadMsg" class="msg"></p>
+
+            <div class="extra">
+                Já tem conta? <span onclick="mostrarTela('login')">Entrar</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <div id="modalDoacao" class="modal">
+        <div class="modal-content">
+
+            <h2>Realizar Doação</h2>
+
+            <input type="number" id="valorDoacao" placeholder="Digite o valor (R$)">
+
+            <div class="botoes">
+                <button onclick="confirmarDoacao()">Confirmar</button>
+                <button class="cancelar" onclick="fecharModal()">Cancelar</button>
+            </div>
+
+            <p id="msgDoacao" class="msg"></p>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -48,8 +48,28 @@ Criar uma solução simples, intuitiva e acessível que permita:
 
 ## 📊 Melhorias Futuras
 
-- Integração com banco de dados
-- Sistema real de autenticação
-- Processamento real de doações
-- Cadastro de usuários e campanhas
-- Responsividade mobile aprimorada
+1. Integração com banco de dados
+2. Sistema real de autenticação
+3. Processamento real de doações
+4. Cadastro de usuários e campanhas
+
+---
+
+## Melhorias atualizadas no projeto:
+1. ✅ Integração com banco de dados (PostgreSQL)
+- As campanhas, usuários e doações passaram a ser armazenados de forma persistente, garantindo que as informações não sejam perdidas ao recarregar a aplicação.
+
+2. ✅ Sistema real de autenticação
+Foi implementado um sistema completo de cadastro e login, permitindo:
+- Criação de contas
+- Validação de credenciais
+- Controle de acesso às funcionalidades (ex: doações)
+
+3. ✅ Processamento de doações funcional
+O sistema agora registra doações reais no banco de dados, permitindo:
+- Atualização automática dos valores arrecadados
+- Associação entre usuário e campanha
+- Simulação realista de funcionamento da plataforma
+
+4. ✅ Cadastro de usuários
+- Usuários podem se cadastrar diretamente na plataforma, possibilitando interação completa com o sistema.
